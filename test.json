@@ -1,0 +1,12 @@
+[
+"input",
+"textarea",
+"radio",
+"checkbox",
+"date",
+"range",
+"select",
+"switch",
+"upload",
+"button"
+]

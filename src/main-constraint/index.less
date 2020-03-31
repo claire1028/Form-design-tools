@@ -1,0 +1,267 @@
+.main-wrapper {
+    min-width: 500px;
+    flex: 1;
+    padding-left: 0;
+    background: #c6cdd5;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+
+    .func-row {
+        height: 75px;
+        text-align: right;
+        padding: 10px 20px 6px 0;
+        .import, .preview {
+            height: 30px;
+            color: white;
+            background: #9ba2a9;
+            font-size: 13px;
+            border: 0;
+            border-radius: 2px;
+            display: inline-block;
+            line-height: 30px;
+            padding: 0 8px;
+        }
+        .preview {
+            margin-right: 15px;
+        }
+    }
+    
+
+    .wrapper {
+        width: 375px;
+        height: 380px;
+        overflow-y: auto;
+        background: white;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .mask {
+        // background: rgba(0,0,0,0.5);
+        opacity: 0.4;
+        background: gray;
+        z-index: 1000;
+    }
+
+    .submit-data {
+        background: white;
+        margin-top: 20px;
+        border: 1px solid #efefef;
+        flex: 1 1;
+        padding: 6px 12px;
+    }
+
+    .form-item {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+
+        span {
+            color: red;
+            font-size: 16px;
+        }
+        label {
+            text-align: left;
+            max-width: 100px;
+            word-break: break-word;
+            margin-right: 8px;
+        }
+        .element {
+            flex: 1 1;
+            position: relative;
+        }
+        input {
+            height: 32px;
+            border-radius: 2px;
+            border: 1px solid #e4e4e4;
+            padding: 0 10px;
+            width: 100%;
+            &[disabled] {
+                color: rgba(0,0,0,.25);
+                background-color: #f5f5f5;
+                cursor: not-allowed;
+                opacity: 1;
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+        .validate-err {
+            border: 1px solid red;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            line-height: 20px;
+            border-radius: 2px;
+            border: 1px solid #e4e4e4;
+            height: 60px;
+            &[disabled] {
+                color: rgba(0,0,0,.25);
+                background-color: #f5f5f5;
+                cursor: not-allowed;
+                opacity: 1;
+            }
+        }
+        .tip {
+            margin: 0;
+            font-size: 12px;
+            color: red;
+            text-align: left;
+            position: absolute;
+        }
+        button, input[type="submit"] {
+            width: 120px;
+            height: 32px; 
+            font-size: 14px;
+            -webkit-appearance: none;
+            border: 1px solid #e4e4e4;
+            border-radius: 2px;
+        }
+        input[type="radio"] {
+            width: 24px;
+            vertical-align: -8px;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+        }
+
+        select {
+            width: 160px;
+            height: 32px;
+            background: white;
+            &[disabled] {
+                color: rgba(0,0,0,.25);
+                background-color: #f5f5f5;
+                cursor: not-allowed;
+                opacity: 1;
+            }
+        }
+        .switch {
+            box-sizing: border-box;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid #e4e4e4;
+            width: 40px;
+            vertical-align: middle;
+            border-radius: 25px;
+            background: #e4e4e4;
+            transition: all 0.8s ease-in-out;
+            .disabled {
+                cursor: not-allowed;
+            }
+            &.disabled {
+                .disabled;
+            }
+            .ball {
+                width: 18px;
+                height: 18px;
+                border-radius: 18px;
+                transition: all 0.5s ease-out;
+                background: #fff;
+            }
+            &.checked {
+                border-color: #1890ff;
+                background: #1890ff;
+                .ball {
+                    transform: translateX(19px);
+                }
+            }
+        }
+        .slider {
+            &:hover {
+                .rc-slider-rail {
+                    background-color: #e1e1e1;
+                }
+                .rc-slider-track {
+                    background: #69c0ff;
+                }
+                .rc-slider-handle {
+                    border-color: #1890ff;
+                }
+            }
+            .rc-slider-mark {
+                .rc-slider-mark-text {
+                    color: #999;
+                }
+                .rc-slider-mark-text-active {
+                    color: #666;
+                }
+            }
+        }
+        .rc-slider-disabled {
+            cursor: not-allowed;
+            background: none;
+            &:hover {
+                .rc-slider-track {
+                    background: #ccc;
+                }
+            }
+            .rc-slider-handle {
+                background-color: #fff;
+                border-color: rgba(0,0,0,.25)!important;
+                box-shadow: none;
+                cursor: not-allowed;
+            }
+        }
+
+        .file-label {
+            align-self: flex-start;
+            top: 6px;
+            position: relative;
+        }
+
+        .file {
+            position: relative;
+            width: 100%;
+            height: 34px;
+            border: 1px solid #d9d9d9;
+            display: inline-block;
+            line-height: 34px;
+            color: #4a4a4a;
+            background: white;
+            input {
+                position: absolute;
+                right: 0;
+                top: 0;
+                opacity: 0;
+                filter: alpha(opacity=0);
+                cursor: pointer;
+            }
+        }
+
+        .file-list {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                text-align: left;
+                padding: 2px 46px;
+                &:hover {
+                    background: #f5f5f5;
+                }
+                span {
+                    float: right;
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+            }
+        }
+        .date-picker {
+            input {
+                height: auto;
+                border: 0;
+            }
+            span {
+                color: rgba(0,0,0,.25);
+            }
+        }
+        
+    }
+}
