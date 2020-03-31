@@ -55,6 +55,11 @@ class TextareaConfig extends React.Component {
                     <label>placeholder:</label> 
                     <Input style={{width: 180}} value={curCfg && curCfg.placeholder} onChange={(e) => this.onChange('placeholder', e)}/>
                 </div>
+                
+                <div className="row-item">
+                    <label>className:</label> 
+                    <Input style={{width: 180}} value={curCfg && curCfg.className} onChange={(e) => this.onChange('className', e)}/>
+                </div>
 
                 <div className="row-item">
                     <label>rows:</label> 

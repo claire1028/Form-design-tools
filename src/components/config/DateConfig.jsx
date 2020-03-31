@@ -33,7 +33,10 @@ class DateConfig extends React.Component {
                     <label>name:</label> 
                     <Input style={{width: 180}} value={curCfg && curCfg.name} onChange={(e) => this.onChange('name', e)}/>
                 </div>
-                
+                <div className="row-item">
+                    <label>className:</label> 
+                    <Input style={{width: 180}} value={curCfg && curCfg.className} onChange={(e) => this.onChange('className', e)}/>
+                </div>
                 <div className="row-item">
                     <label>是否required:</label> 
                     <Radio.Group onChange={(e)=> this.onChange('required', e)} value={curCfg && curCfg.required}>

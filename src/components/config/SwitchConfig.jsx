@@ -32,6 +32,11 @@ class SwitchConfig extends React.Component {
                 </div>
 
                 <div className="row-item">
+                    <label>className:</label> 
+                    <Input style={{width: 180}} value={curCfg && curCfg.className} onChange={(e) => this.onChange('className', e)}/>
+                </div>
+                
+                <div className="row-item">
                     <label>是否required:</label> 
                     <Radio.Group onChange={(e)=> this.onChange('required', e)} value={curCfg && curCfg.required}>
                         <Radio value={true}>是</Radio>

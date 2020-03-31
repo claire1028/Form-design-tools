@@ -73,6 +73,10 @@ class ButtonConfig extends React.Component {
                     />
                 </div> */}
                 <div className="row-item">
+                    <label>className:</label> 
+                    <Input style={{width: 180}} value={curCfg && curCfg.className} onChange={(e) => this.onChange('className', e)}/>
+                </div>
+                <div className="row-item">
                     <label>按钮样式:</label>
                     <Input.TextArea placeholder="button style" style={{ width: 180 }} onChange={(e) => this.onChange('style', e)}
                         value={

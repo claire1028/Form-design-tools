@@ -56,7 +56,7 @@ class Range extends React.Component {
     render() {
         const { rangeConfigProps, cIndex } = this.props;
         const curConfig = rangeConfigProps[cIndex];
-        const {vertical, disabled, min, max, value} = curConfig || {};
+        const {vertical, disabled, min, max, value, className} = curConfig || {};
         const minV = reg.test(min) ? Number(min) : DEFAULT_MIN_VAL;
         const maxV = reg.test(max) ? Number(max) : DEFAULT_MAX_VAL;
 
@@ -72,7 +72,7 @@ class Range extends React.Component {
                         disabled={disabled} 
                         min={minV} 
                         max={maxV} 
-                        className="slider"
+                        className={`slider ${className}`}
                         vertical={vertical}
                         value={value}
                         tipProps={{

@@ -47,7 +47,7 @@ class Dates extends React.Component {
     render() {
         const { dateConfigProps, cIndex } = this.props;
         const curConfig = dateConfigProps[cIndex] || {};
-        const {err, required, label, disabled, value} = curConfig;
+        const {err, required, label, disabled, value, className} = curConfig;
         return (
             <div className="form-item" onClick={() => this.selectCurItem(cIndex)}>
                 <label htmlFor={`check${cIndex}`}>
@@ -56,11 +56,10 @@ class Dates extends React.Component {
                 </label>
                 <div className="element" style={{textAlign: 'left'}}>
                     <DatePicker
-                        className="date-picker"
+                        className={`date-picker ${className}`}
                         onChange={this.handleChange}
                         disabled={disabled}
                         value={value ? moment(value, 'YYYY-MM-DD') : null}
-                        // defaultValue={moment(new State,'YYYY-MM-DD')}
                     />
                     <p className="tip">{err} </p>
                 </div>

@@ -120,7 +120,7 @@ class Input extends React.Component {
     render() {
         const { inputConfigProps, cIndex } = this.props;
         const curConfig = inputConfigProps[cIndex] || {};
-        const {required, label, value, placeholder, type, err} = curConfig;
+        const {required, label, value, placeholder, type, err, className} = curConfig;
         const txt = type || 'text';
         return (
             <div className="form-item" onClick={() => this.selectCurItem(cIndex)}>
@@ -130,11 +130,11 @@ class Input extends React.Component {
                 </label>
                 <div className="element">
                     <input 
-                        {...curConfig} 
+                        {...curConfig}
                         onChange={this.handleChange} 
                         value={value || ''}
                         placeholder={placeholder || `Please input ${txt}`}
-                        className={`${err ? 'validate-err' : ''}`}
+                        className={`${className} ${err ? 'validate-err' : ''}`}
                     />
                     <p className="tip">{err} </p>
                 </div>

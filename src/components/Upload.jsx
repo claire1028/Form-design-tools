@@ -54,24 +54,25 @@ class Upload extends React.Component {
 
     render() {
         const { uploadConfigProps, cIndex } = this.props;
-        const curConfig = uploadConfigProps[cIndex];
+        const curConfig = uploadConfigProps[cIndex] || {};
+        const {className, required, label, multiple, value, err} = curConfig;
         return (
             <div className="form-item" onClick={() => this.selectCurItem(cIndex)}>
                 <label className="file-label">
-                    {curConfig && curConfig.required && <span>*</span>}
-                    {curConfig && curConfig.label || 'Upload'}
+                    {required && <span>*</span>}
+                    {label || 'Upload'}
                 </label>
                 <div className="element">
                     <div style={{width: '100%'}}>
-                        <a className="file" href="#!">
+                        <a className={`file ${className}`} href="#!">
                             Click to Upload
                             <input type="file" onChange={this.handleChange} 
                                 ref={ref => this.fileRef = ref}
-                                multiple={curConfig && curConfig.multiple}
+                                multiple={multiple}
                             />
                         </a>
                         <ul className="file-list">
-                            {curConfig && curConfig.value && curConfig.value.map((v, i) => 
+                            {value && value.map((v, i) => 
                                 <li key={i}>
                                     {v.name}
                                     <span onClick={() => this.onDelete(i)}>delete</span>
@@ -79,7 +80,7 @@ class Upload extends React.Component {
                             )}
                         </ul>
                     </div>
-                    <p className="tip">{curConfig && curConfig.err} </p>
+                    <p className="tip">{err} </p>
                 </div>
                 
             </div>

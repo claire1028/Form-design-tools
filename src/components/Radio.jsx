@@ -49,7 +49,7 @@ class Radio extends React.Component {
     render() {
         const { radioConfigProps, cIndex } = this.props;
         const curConfig = radioConfigProps[cIndex] || {};
-        const {values, itemLabels, required, label, name, value} = curConfig;
+        const {values, itemLabels, required, label, name, value, className} = curConfig;
 
         const radios = values ? values.split(',') : DEFAULT_RADIOS;
         const labes = itemLabels ? itemLabels.split(',') : DEFAULT_LABELS;
@@ -70,6 +70,7 @@ class Radio extends React.Component {
                                 value={v}
                                 name={name || `radio${cIndex}`}
                                 required = {required}
+                                className={className}
                             />
                             <label>{labes[i]}</label>
                         </div>

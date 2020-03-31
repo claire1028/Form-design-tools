@@ -44,7 +44,7 @@ class Switch extends React.Component {
     render() {
         const { switchConfigProps, cIndex } = this.props;
         const curConfig = switchConfigProps[cIndex] || {};
-        const {value, disabled, err, required, label} = curConfig;
+        const {value, disabled, err, required, label, className} = curConfig;
 
         return (
             <div className="form-item" onClick={() => this.switchCurItem(cIndex)}>
@@ -56,7 +56,7 @@ class Switch extends React.Component {
                 <div className="element" style={{textAlign: 'left'}}>
                     <div
                         onClick={!disabled ? () => this.handleChange(!value) : null}
-				        className={`switch ${value ? 'checked' : ''} ${disabled ? 'disabled' : ''}`}
+				        className={`switch ${value ? 'checked' : ''} ${disabled ? 'disabled' : ''} ${className} `}
 			        >
                         <div className="ball" />
                     </div>

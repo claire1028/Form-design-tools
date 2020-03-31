@@ -32,6 +32,11 @@ class RadioConfig extends React.Component {
                 </div>
 
                 <div className="row-item">
+                    <label>className:</label> 
+                    <Input style={{width: 180}} value={curCfg && curCfg.className} onChange={(e) => this.onChange('className', e)}/>
+                </div>
+
+                <div className="row-item">
                     <label>item labels:</label> 
                     <Input style={{width: 180}} value={curCfg && curCfg.itemLabels} onChange={(e) => this.onChange('itemLabels', e)}/>
                     <p style={{color: 'orange', marginLeft: 80}}>以逗号分隔,如:1,2,3</p>
